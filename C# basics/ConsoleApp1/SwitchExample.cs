@@ -6,14 +6,16 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            bool eligibility = bool.Parse("true");
-            int intfromstr = int.Parse("100");
-            double doublefromstr = double.Parse("100.20");
-
-            string strVal = doublefromstr.ToString();
-            Console.WriteLine($"Data type : {strVal.GetType()}");
-            double dblNum = 3423.20;
-            Console.WriteLine($"Integer: {(int)dblNum}");
+            int numero = 1000;
+            Console.WriteLine($"Estamos sumando cosas {numero}");
+            string stringOfTest = "magaly";
+            Console.WriteLine($"testing length method {stringOfTest.Length}");
+            Console.WriteLine($"testing contains method {stringOfTest.Contains("m")}");
+            Console.WriteLine($"testing indexOf method {stringOfTest.IndexOf("y")}");
+            Console.WriteLine($"testing remove method: {stringOfTest.Remove(1, 3)}");
+            Console.WriteLine($"testing insert method: {stringOfTest.Insert(1, "a")}");
+            Console.WriteLine($"testing insert method: {stringOfTest.Replace("a", "e")}");
+            Console.WriteLine($"testing compare method: {String.Compare(stringOfTest, "magaly")}");
 
 
 
