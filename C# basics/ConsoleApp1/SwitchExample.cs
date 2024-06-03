@@ -1,24 +1,41 @@
 ﻿using System;
+using System.Globalization;
 
 namespace ConsoleApp1
 {
     public class Program
     {
+
+        static double DoDivision(double primerNumero, double segundoNumero)
+        {
+            return primerNumero / segundoNumero;
+        }
         static void Main(string[] args)
         {
-            Random random = new Random();
-            int secretNumber = random.Next(1, 11); // minimun value and maximum value
-            int numberGuessed = 0;
-            Console.WriteLine("random num: ", secretNumber);
+            double num = 5;
+            double num2 = 0;
 
-            do
+            try
             {
-                Console.WriteLine("Enter a number between 1 and 10: ");
-                numberGuessed = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("5/0 = {0}", DoDivision(num, num));
+            }
+            catch (DivideByZeroException ex)
+            {
 
-            } while (numberGuessed != secretNumber);
+                Console.WriteLine($"DivideByZero {ex.Message}");
+                Console.WriteLine(ex.GetType().Name);
+                Console.WriteLine(ex.Message);
+            }
 
-            Console.WriteLine($"You guessed it, it was: {secretNumber}");
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            finally
+            {
+                Console.WriteLine("Default message");
+            }
 
 
         }
