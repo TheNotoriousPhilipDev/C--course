@@ -6,17 +6,27 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int numero = 1000;
-            Console.WriteLine($"Estamos sumando cosas {numero}");
-            string stringOfTest = "magaly";
-            Console.WriteLine($"testing length method {stringOfTest.Length}");
-            Console.WriteLine($"testing contains method {stringOfTest.Contains("m")}");
-            Console.WriteLine($"testing indexOf method {stringOfTest.IndexOf("y")}");
-            Console.WriteLine($"testing remove method: {stringOfTest.Remove(1, 3)}");
-            Console.WriteLine($"testing insert method: {stringOfTest.Insert(1, "a")}");
-            Console.WriteLine($"testing insert method: {stringOfTest.Replace("a", "e")}");
-            Console.WriteLine($"testing compare method: {String.Compare(stringOfTest, "magaly")}");
+            int[] numbers = new int[3];
+            numbers[0] = 1;
+            numbers[1] = 2;
+            numbers[2] = 3;
 
+            Console.WriteLine("Vamos a imprimir algún numero del array numbers: {0}, {1}", numbers[0], numbers[1]);
+
+            string[] customers = { "bob", "sally", "sue", };
+            var employees = new[] { "mike", "paul" };
+            object[] randomArray = { "paul", 45, 1.234 };
+            Console.WriteLine("randomArray 0: {0}", randomArray[0].GetType());
+            Console.WriteLine("Array size : {0}", randomArray.Length);
+            for (int i = 0; i < randomArray.Length; i++)
+            {
+                Console.WriteLine(randomArray[i]);
+            }
+            Console.WriteLine("--------------------------");
+
+            string[,] custNames = new string[2, 2] { { "Bob", "Carlos" }, { "Sally", "Smith" } };
+            Console.WriteLine("MD Value: {0}",
+                custNames.GetValue(1, 1));
 
 
         }
