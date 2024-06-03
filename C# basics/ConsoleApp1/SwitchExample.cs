@@ -4,6 +4,17 @@ namespace ConsoleApp1
 {
     public class Program
     {
+
+        // ------------FUNCTIONS------------
+        static void PrinArray(int[] intArray, string mess)
+        {
+            foreach (int i in intArray)
+            {
+                Console.WriteLine("{0} : {1}", mess, i);
+            }
+        }
+
+        //------------END OF FUNCTIONS------------
         static void Main(string[] args)
         {
             int[] numbers = new int[3];
@@ -28,9 +39,20 @@ namespace ConsoleApp1
             Console.WriteLine("MD Value: {0}",
                 custNames.GetValue(1, 1));
 
+            int[] randNums = { 1, 2, 3, 4, };
+            PrinArray(randNums, "foreach");
 
+            Console.WriteLine("--------------------------------------");
 
+            Array.Sort(randNums);
+            Array.Reverse(randNums);
+            Array.IndexOf(randNums, 0);
+            randNums.SetValue(0, 0);
+            int[] srcArray = { 1, 2, };
 
         }
+
+
+
     }
 }
