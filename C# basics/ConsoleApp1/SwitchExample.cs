@@ -1,41 +1,24 @@
 ﻿using System;
 using System.Globalization;
+using System.Text;
 
 namespace ConsoleApp1
 {
     public class Program
     {
-
-        static double DoDivision(double primerNumero, double segundoNumero)
-        {
-            return primerNumero / segundoNumero;
-        }
         static void Main(string[] args)
         {
-            double num = 5;
-            double num2 = 0;
+            StringBuilder stringBuilder = new StringBuilder("Random Text");
+            StringBuilder stringBuilder2 = new StringBuilder("More Stuff that is very important", 256);
+            Console.WriteLine("Capacity: {0}", stringBuilder2.Capacity);
+            Console.WriteLine("Capacity: {0}", stringBuilder2.Length);
+            stringBuilder2.AppendLine("\nMore important text");
+            CultureInfo enUS = CultureInfo.GetCultureInfo("en-US");
+            string bestCustomer = "bob smith";
+            stringBuilder2.AppendFormat(enUS, "Best Customer: {0}", bestCustomer);
+            Console.WriteLine(stringBuilder2.ToString());
+            stringBuilder2.Clear();
 
-            try
-            {
-                Console.WriteLine("5/0 = {0}", DoDivision(num, num));
-            }
-            catch (DivideByZeroException ex)
-            {
-
-                Console.WriteLine($"DivideByZero {ex.Message}");
-                Console.WriteLine(ex.GetType().Name);
-                Console.WriteLine(ex.Message);
-            }
-
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-
-            finally
-            {
-                Console.WriteLine("Default message");
-            }
 
 
         }
